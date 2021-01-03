@@ -1,0 +1,43 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import styles from './Transactions.module.css';
+
+
+function TransactionHistory({items}){
+  return (
+  <table className ="transaction-history">
+    <thead className = {styles.head}>
+      <tr>
+        <th>Type</th>
+        <th>Amount</th>
+        <th>Currency</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {items.map(item=>(
+            <tr key = {item.id}>
+              <td>{(item.type)[0].toUpperCase()+item.type.slice(1)}</td>
+              <td>{item.amount}</td>
+              <td>{item.currency}</td>
+            </tr>
+      ))}
+
+    </tbody>
+  </table>
+  )
+}
+
+TransactionHistory.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.exact({
+     id:PropTypes.string.isRequired,
+     type: PropTypes.string.isRequired,
+     amount: PropTypes.string.isRequired,
+     currency: PropTypes.string.isRequired,
+
+
+  }),).isRequired,
+}
+
+export default TransactionHistory;

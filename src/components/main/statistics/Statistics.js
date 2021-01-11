@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Statistics.module.css';
+import colorGenerator from '../../../services/colorgenerator';
 
 
 function Statistics({title,stats}){
@@ -12,7 +13,7 @@ function Statistics({title,stats}){
 
       <ul className={styles.statList}>
       {stats.map(item=>(
-      <li key = {item.id} className = {styles.statsItem}>
+      <li key = {item.id} className = {styles.statsItem} style={{backgroundColor: `${colorGenerator()}`}}>
         <span className = "label">{item.label}</span>
         <span className = "percentage">{item.percentage}%</span>
       </li>

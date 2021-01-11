@@ -21,15 +21,15 @@ function Profile({name, tag,location, avatar,stats}){
     <ul className ={styles.stats}>
     <li className = {styles.item}>
       <span className ={styles.label}>Followers</span>
-      <span className ={styles.quantity}> {stats.followers}</span>
+      <span className ={styles.quantity}> {stats.followers.toLocaleString('en-US')}</span>
     </li>
     <li className = {styles.item}>
       <span className ={styles.label}>Views</span>
-      <span className ={styles.quantity}> {stats.views}</span>
+      <span className ={styles.quantity}> {stats.views.toLocaleString('en-US')}</span>
     </li>
     <li className = {styles.item}>
       <span className ={styles.label}>Likes</span>
-      <span className ={styles.quantity}> {stats.likes}</span>
+      <span className ={styles.quantity}> {stats.likes.toLocaleString('en-US')}</span>
     </li>
   </ul>
   </div>
